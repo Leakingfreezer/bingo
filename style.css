@@ -7,6 +7,11 @@ body {
   background: #e9e9e9;
   padding: 20px;
 }
+
+.grid-container, 
+.card { 
+  cursor: url("./cursor.png") 16 16, pointer;
+}
 /* Fixed-size container based on your Canva design */
 .game-wrapper {
   position: relative;
@@ -34,7 +39,7 @@ body {
 }
 
 /* All interactive elements sit above the background */
-.generate-term,
+.generateBtn,
 .reveal-all,
 .term-box,
 .grid-container {
@@ -59,8 +64,9 @@ body {
 }
 
 /* Control Buttons*/
-.generate-term, 
-.reveal-all {
+.generateBtn, 
+.reveal-all,
+.term-box {
   position: absolute;
   z-index:2; 
 
@@ -89,10 +95,27 @@ body {
 }
 
 /* Generate term box */
-.generate-term {
+.reveal-all {
+  top:  29%;
+  left: 64.5%; 
+  width: 10%;
+  background: #f45197;
+}
+
+/* Reveal all button */
+.generateBtn {
   top:  29%;
   left: 25%; 
-  width: 28%;
+  width: 39%;
+  background: #fdfdf6;
+  border: 3px solid #2d285f;
+}
+
+/*Term generator text display*/
+.term-box {
+  top:  29%;
+  left: 25%; 
+  width: 39%;
   background: #fdfdf6;
   border: 3px solid #2d285f;
 }
@@ -135,4 +158,19 @@ body {
 
 .card:hover {
   transform: scale(1.03);
+}
+
+/*Animation for the reveal all cards */
+.card {
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.card.flip {
+  transform: rotateY(90deg);
+}
+
+.card.definition-card {
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 8px;
 }
