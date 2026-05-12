@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #e9e9e9;
+  padding: 20px;
+}
+/* Fixed-size container based on your Canva design */
+.game-wrapper {
+  position: relative;
+
+  /* Set the exact size of your exported background image */
+  width: 1365px;
+  height: 768px;
+
+  /* Prevent shrinking or stretching */
+  flex-shrink: 0;
+}
+
+/* Background image fills the container exactly */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: contain;
+  z-index: 0;
+}
+
+/* All interactive elements sit above the background */
+.generate-term,
+.reveal-all,
+.term-box,
+.grid-container {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Bingo card grid */
+.grid-container {
+  position: absolute;
+  left: 25.5%;
+  top: 38%;
+  width: 47%;
+  height: 47%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-rows: repeat(4, 1fr);    /* 4 equal rows */
+  gap: 6px;
+
+  z-index: 2;
+}
+
+/* Control Buttons*/
+.generate-term, 
+.reveal-all {
+  position: absolute;
+  z-index:2; 
+
+  /* Remove default button styling */
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  /* Size */
+  height: 48px;
+  
+  /* Typography */
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+
+  /* Shape */
+  border-radius: 8px;
+
+  /* Subtle shadow to match cards */
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.18);
+
+  /* Smooth hover effect */
+  transition: all 0.2s ease;
+  
+}
+
+/* Generate term box */
+.generate-term {
+  top:  29%;
+  left: 25%; 
+  width: 28%;
+  background: #fdfdf6;
+  border: 3px solid #2d285f;
+}
+
+/* Individual cards */
+.card {
+  /* Make every card fill its grid cell completely */
+  width: 100%;
+  height: 100%;
+
+  /* Remove default button styling */
+  border: none;
+  outline: none;
+
+  /* Visual styling */
+  background: #fdfdf6;
+  border-radius: 14px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.22);
+
+  /* Text styling */
+  color: #2d285f;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.15;
+  text-align: center;
+
+  /* Center text horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Allow long terms to wrap neatly */
+  padding: 8px;
+  word-break: break-word;
+
+  /* Interaction */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
